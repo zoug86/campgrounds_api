@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
+/* Common Styles */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    /* list-style-type: none; */
+    outline: none;
+    font-family: 'Alegreya',cursive;
+    font-weight: 400;
+}
+
+/* use rem - 1rem = 16px */
+
+html{
+    font-size: 62.5%; /* we do this so that we can use rems*/
+    scroll-behavior: smooth;
+}
+
+body{
+    color:rgb(235, 233, 233);
+}
+
+
+.container{
+    width: 50%;
+    overflow-x: hidden;
+    transform: translateX(50%);
+    margin: 5rem 0;
+    overflow-x: auto;
+    /* background-color: rgb(248, 242, 242); */
+    /* overflow-y: hidden; */
+}
+
+.section-heading{
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(56, 55, 55);
+    text-shadow: 2rem 2rem 4rem #aaa;
+    /* opacity: 0.3; */
+}
+
+.heading-description{
+    font-size: 2rem;
+    margin: 3rem 0 5rem 0;
+    text-align: justify;
+    color: rgb(124, 120, 120);
+    text-shadow: 2rem 2rem 4rem #aaa;
+    line-height: 3rem;
+    /* opacity: 0.3; */
+}
+
+.secondary-heading{
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* text-align: center; */
+    color: rgb(56, 55, 55);
+    text-shadow: 2rem 2rem 4rem #aaa;
+    margin-bottom: 1rem;
+    /* border-bottom: 0.1rem solid rgb(93, 89, 89);; */
+    /* opacity: 0.3; */
+}
+
+.secondary-heading-description{
+    width: 100%;
+    font-size: 2rem;
+    margin: 3rem 0 4rem 0;
+    /* text-align: justify; */
+    color: rgb(124, 120, 120);
+    line-height: 3rem;
+    text-shadow: 2rem 2rem 4rem #aaa;
+   overflow-x: auto;
+}
+
+.secondary-heading-description-text{
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.camp-lists{
+    font-size: 1.75rem;
+    /* margin: 3rem 0 4rem 0; */
+    /* text-align: justify; */
+    color: rgb(124, 120, 120);
+    line-height: 3rem;
+    text-shadow: 2rem 2rem 4rem #aaa;
+    /* opacity: 0.3; */
+}
+
+.campground-format{
+    margin-top: 2rem;
+}
+
+.json-response{
+    color: green;
+}
+
+.json-object{
+    font-family: "Source Code Pro", sans-serif;
+    background: rgb(235, 233, 233);
+    overflow-x: auto;
+}
+
+.get-request{
+    color: rgb(56, 55, 55);
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.api-methods{
+    background:rgb(56, 55, 55);
+    color: white;
+}
+
+.purple{
+   color: rgb(155, 82, 155);
+}
+
+.red{
+color: rgb(235, 97, 97);
+}
+
+.orange{
+  color: rgb(255, 196, 0);
+}
+
+.blue{
+    color: rgb(162, 134, 240);
+}
+
+.lightblue{
+    color: lightblue;
+}
+
+.yellow{
+    color: rgb(216, 246, 114);
+}
+
+.grey{
+    color: rgb(124, 120, 120);
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Campgrounds API</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="section-heading">NORTH AMERICA CAMPGROUNDS API</h1>
+        <p class="heading-description">It is all here and at your fingertips: All 13,000 US and Canada
+            (vehicle-accessible) public
+            campgrounds, with accurate lat/lon for your GPS or smart phone, campground amenities and phone numbers.
+            Includes all National Park, National
+            Forest,
+            State Park and Provincial campgrounds, all BLM, TVA and Army engineers and military-only campgrounds. Most
+            regional, county, city and utility-owned are also included.</p>
+        <h2 class="secondary-heading">About</h2>
+        <hr>
+        <p class="secondary-heading-description">The data is provided by:<br>
+            <a href="http://www.uscampgrounds.info/takeit.html">http://www.uscampgrounds.info/takeit.html</a>
+        </p>
+        <h2 class="secondary-heading">Description</h2>
+        <hr>
+        <div class="secondary-heading-description">
+            <p class="secondary-heading-description-text"> The data include around 13,311 US and Canada campgrounds and
+                they
+                are
+                distributed as follows:
+                <li class="camp-lists">US West Campgrounds: 3926 camps</li>
+                <li class="camp-lists">US South West Campgrounds: 1472 camps</li>
+                <li class="camp-lists">US South Campgrounds: 2125 camps</li>
+                <li class="camp-lists">US North East Campgrounds: 718 camps</li>
+                <li class="camp-lists">US Mid West Campgrounds: 3167 camps</li>
+                <li class="camp-lists">Canada Campgrounds: 1603 camps</li>
+            </p>
+            <div class="campground-format">
+                <p>A single Campground object looks as follows:</p>
+                <pre class="campground-format-json">
+            <div class="json-object">
+{
+    "longitude": <span class="json-response">"-146.343",</span>
+    "latitude": <span class="json-response">"61.086",</span>
+    "gps_composite_field": <span class="json-response">"ALLI/Allison Point  CP PH:907.835.2282 mid may-mid sep  SITES:61  AMEN:45ft approx 3.1 mi S  of Valdez 61.086 -146.343",</span>
+    "campground_code": <span class="json-response">"ALLI",</span>
+    "campground_name": <span class="json-response">"Allison Point",</span>
+    "type": <span class="json-response">"CP",</span>
+    "phone": <span class="json-response">"907.835.2282",</span>
+    "dates_open": <span class="json-response">"mid may-mid sep",</span>
+    "comments ": <span class="json-response">" ",</span>
+    "number_campsites": <span class="json-response">"61",</span>
+    "elevation_ft": <span class="json-response">" ",</span>
+    "amenities ": <span class="json-response">"45ft ",</span>
+    "state": <span class="json-response">"AK",</span>
+    "distance": <span class="json-response">"3.1",</span>
+    "bearing": <span class="json-response">"S ",</span>
+    "nearest_town": <span class="json-response">"Valdez"</span>
+}
+</div> </pre>
+            </div>
+
+        </div>
+        <h2 class="secondary-heading">HTTP Requests</h2>
+        <hr>
+        <div class="secondary-heading-description">
+            <h4 class="get-request">**GET HTTP Requests</h4>
+            <p class="secondary-heading-description-text"> Data can be requested using this URL: <br>
+                <a href="https://api-campgrounds.herokuapp.com/">https://api-campgrounds.herokuapp.com/</a>
+            </p>
+            <p class="secondary-heading-description-text"> 1- Get all Campgrounds: <br>
+                <a href="https://api-campgrounds.herokuapp.com/db">https://api-campgrounds.herokuapp.com/db</a>
+            </p>
+            <p class="secondary-heading-description-text"> 2- Get Campgrounds by region: <br>
+                <span>Example: US Western Campgrounds</span> <br>
+                <a
+                    href="https://api-campgrounds.herokuapp.com/westcamp">https://api-campgrounds.herokuapp.com/westcamp</a>
+            </p>
+            <p class="secondary-heading-description-text"> 3- Filter Campgrounds by name: <br>
+                <a href="https://api-campgrounds.herokuapp.com/westcamp?campground_name=Allison Point">https://api-campgrounds.herokuapp.com/westcamp?campground_name=Allison
+                    Point</a>
+            </p>
+            <p class="secondary-heading-description-text"> 4- Pagination and Limit: <br>
+                <a
+                    href="https://api-campgrounds.herokuapp.com/westcamp?_page=1&_limit=5">https://api-campgrounds.herokuapp.com/westcamp?_page=1&_limit=5</a>
+            </p>
+            <p class="secondary-heading-description-text"> 5- Sorting: <br>
+                <a
+                    href="https://api-campgrounds.herokuapp.com/westcamp?_sort=campground_name&_order=asc">https://api-campgrounds.herokuapp.com/westcamp?_sort=campground_name&_order=asc</a>
+            </p>
+            <p class="secondary-heading-description-text"> 6- Full Text Search: <br>
+                <a href="https://api-campgrounds.herokuapp.com/westcamp?q=Allison Point">https://api-campgrounds.herokuapp.com/westcamp?q=Allison
+                    Point</a>
+            </p>
+        </div>
+        <h2 class="secondary-heading">How To Use</h2>
+        <hr>
+        <div class="secondary-heading-description">
+            <div class="api-methods-description">
+                <h4 class="get-request">XMLHttpRequest</h4>
+                <pre>
+    <div class="api-methods">
+        <span class="purple">const</span> <span class="red">request</span>  <span class="purple">= new</span>  <span class="orange">XMLHttpRequest()</span>;
+        request.<span class="blue">open</span><span class="orange">(</span><span class="yellow">"GET", "https://api-campgrounds.herokuapp.com/db"</span><span class="orange">)</span>;
+        request.<span class="blue">send</span><span class="orange">( )</span>;
+        request.<span class="blue">onload</span> <span class="purple"> = </span> <span class="orange">( )</span> <span class="purple"> => </span> <span class="orange">{</span>
+            <span class="lightblue">if</span> <span class="purple">(</span>request.status <span class="purple"> === </span> <span class="red">200</span><span class="purple">)</span> {
+                <span class="orange">console</span>.<span class="blue">log(</span>(<span class="red">JSON</span>.<span class="blue">parse</span><span class="orange">(</span>request.response<span class="orange">)</span><span class="blue">)</span>;
+            }  <span class="lightblue">else</span> {
+                <span class="orange">console</span>.<span class="blue">log(</span>request<span class="blue">)</span>;
+                <span class="orange">console</span>.<span class="blue">log(</span>`error <span class="lightblue">$</span>{request.status}`<span class="blue">)</span>;
+            }
+        }
+    </div>
+
+</pre>
+            </div>
+            <div class="api-methods-description">
+                <h4 class="get-request">Fetch Api</h4>
+                <pre>
+    <div class="api-methods">
+        <span class="blue">fetch</span><span class="orange">(</span> <span class="yellow">"https://api-campgrounds.herokuapp.com/db"</span><span class="orange">)</span>
+            .<span class="blue">then</span>(<span class="red">response</span> <span class="purple">=> {</span>
+                <span class="lightblue">return</span> response.<span class="blue">json( )</span>;
+                <span class="purple">}</span>). <span class="blue">then</span>(<span class="red">json</span> <span class="purple">=> {</span>
+                <span class="orange">console</span>.<span class="blue">log</span>(json);
+                <span class="purple">}</span>)
+
+            <span class="grey">// Use async...await</span>
+
+            <span class="purple">async function</span> <span class="blue">getCampgrounds</span><span class="orange">( )</span>{
+                <span class="purple">let</span> response  <span class="purple">=</span>
+                            <span class="lightblue">await</span> <span class="blue">fetch</span><span class="orange">(</span> <span class="yellow">"https://api-campgrounds.herokuapp.com/db"</span><span class="orange">)</span>;
+                <span class="purple">let</span> data  <span class="purple">=</span>  <span class="lightblue">await</span> reponse.<span class="blue">json( )</span>;
+                <span class="lightblue">return</span> data;
+            }
+            <span class="blue">getCampgrounds</span><span class="orange">( )</span>.<span class="blue">then(</span>(<span class="red">response</span> <span class="purple"> => {</span>
+                <span class="orange">console</span>. <span class="blue">log(</span>reponse<span class="blue">)</span>;
+            <span class="purple">}</span>)
+    </div>
+
+</pre>
+            </div>
+        </div>
+        <h2 class="secondary-heading">Contact</h2>
+        <hr>
+        <div class="secondary-heading-description">
+            <p>For further assistance ----- marzouguih86@gmail.com </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
